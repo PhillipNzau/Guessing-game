@@ -49,7 +49,14 @@ const playGame = function () {
   }
 };
 
+// Play game on check button click
 document.querySelector('.check').addEventListener('click', playGame);
+
+// Add the enter button as a valid playing button
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') { playGame() }
+});
+
 
 // Play again (Reset Game) function
 const playAgain = function () {
@@ -66,4 +73,5 @@ const playAgain = function () {
   document.querySelector('.check').style.display = 'block';
 };
 
+// Reset the game on again button click
 document.querySelector('.again').addEventListener('click', playAgain);
